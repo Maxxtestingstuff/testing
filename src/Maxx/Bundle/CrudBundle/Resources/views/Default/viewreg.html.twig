@@ -1,0 +1,9 @@
+<title>Registered users</title>
+
+<ul>
+{% for userinfo in userinfo %}   
+<li><b>{{ userinfo.id }}</b>   <b>Name:</b> {{ userinfo.name }} <b>Lastname:</b> {{ userinfo.lastname }} <b>Email:</b> {{ userinfo.email }}</li>
+{% endfor %}
+</ul>
+
+<a href="{{url('regpage')}}">Back to registration</a>

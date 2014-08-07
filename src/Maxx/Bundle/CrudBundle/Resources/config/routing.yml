@@ -1,0 +1,12 @@
+regview:
+    pattern: /reg/viewregistered
+    defaults: { _controller: MaxxCrudBundle:Regview:viewreg }
+regpage:
+    pattern:  /reg
+    defaults: { _controller: MaxxCrudBundle:New:index }
+regsuccess:
+    pattern: /reg/success
+    defaults: { _controller: MaxxCrudBundle:Default:success }
+ajaxsumbit:
+    pattern: /reg/ajaxsubmit
+    defaults: { _controller: MaxxCrudBundle:Ajax:ajaxsubmit }

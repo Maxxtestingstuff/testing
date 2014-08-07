@@ -1,0 +1,7 @@
+parameters:
+#    maxx_crud.example.class: Maxx\Bundle\CrudBundle\Example
+
+services:
+#    maxx_crud.example:
+#        class: %maxx_crud.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

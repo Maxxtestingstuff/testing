@@ -1,0 +1,6 @@
+maxx_crud:
+    resource: "@MaxxCrudBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+

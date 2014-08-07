@@ -1,0 +1,52 @@
+{% extends '::main.layout.html.twig' %}
+{% block content %}
+<title>Registration</title>
+
+{{form(form)}}
+
+<input type="button" name="register" id="submit" value="Register"/>
+
+<a href="{{url('regview')}}">View all registered</a>
+
+<script>
+      
+$(document).ready(function(){
+    
+    
+  $("#submit").click(function() {
+     
+        if (!$('#UserinfoType_name').val()) {
+            alert("Please enter your name!");
+        }
+        else if (!$('#UserinfoType_lastname').val()) {
+            alert("Please enter your lastname!");
+        }
+        else if (!$('#UserinfoType_email').val()) {
+            alert("Please enter your email!");
+        }
+        else {
+            $.ajax({
+                type: "POST",
+                url: "{{url('ajaxsumbit')}}",
+                data: { name: $('#UserinfoType_name').val(), lastname: $('#UserinfoType_lastname').val(), email: $('#UserinfoType_email').val() }
+            }).success(function(result) {
+                if (result == 1) {
+                    alert( "Email taken!" );
+                }
+                else {
+                    alert( "Success!");
+                }
+            }).error(function() {
+                alert( "Fail!" );
+            });
+        }
+        
+    }); 
+});
+
+    
+    
+ 
+</script>
+
+{% endblock %}
